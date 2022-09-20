@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font: 400 15px/1.8 "Lato", sans-serif;
+        color: #777;
+      }
+      .bgimg-1 {
+        position: relative;
+        opacity: 0.65;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .video {
+        background-image: url("https://images.pexels.com/photos/34407/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=750&w=1260");
+      }
+      .audio {
+        background-image: url("https://images.pexels.com/photos/6318/smartphone-technology-music-headphones.jpg?auto=compress&cs=tinysrgb&h=750&w=1260");
+      }
+      .image {
+        background-image: url("https://images.pexels.com/photos/185933/pexels-photo-185933.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+      }
+      .bgimg-1 {
+        height: 100%;
+      }
+
+      .caption {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: #000;
+      }
+
+      .caption span.border {
+        background-color: #111;
+        color: #fff;
+        padding: 18px;
+        font-size: 25px;
+        letter-spacing: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bgimg-1 <%= background %>">
+      <div class="caption">
+        <ul>
+          <% data.forEach(function(d) { %>
+          <li><span class="border">IP: <%= d.ip %></span></li>
+          <li><span class="border">Type: <%= d.type %></span></li>
+          <li><span class="border">Count: <%= d.count %> files</span></li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
